@@ -4,4 +4,5 @@ const carPassing = function (cars, speed) {
     time: Date.now()
   };
   cars.push(data);
+  return cars;
 }
