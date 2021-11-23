@@ -1,3 +1,21 @@
+const isMultiple = function(num, multiple) {
+  return num % multiple === 0;
+};
+
+const loopyLighthouse = function(range, multiples, words) {
+  for (let i = range[0]; i <= range[1]; i++) {
+    let string = (isMultiple(i, multiples[0]))
+      ? (isMultiple(i, multiples[1]))
+        ? words[0] + words[1]
+        : words[0]
+      : (isMultiple(i, multiples[1]))
+        ? words[1]
+        : i;
+    console.log(string);
+  }
+};
+
+/*
 const loopyLighthouse = function (range, multiples, words) {
   for (let i = range[0]; i <= range[1]; i++) {
     if (i % multiples[0] === 0) {
@@ -13,5 +31,5 @@ const loopyLighthouse = function (range, multiples, words) {
     }
   }
 }
-
+*/
 loopyLighthouse([15, 90], [2, 5], ["Batty", "Beacon"]);
